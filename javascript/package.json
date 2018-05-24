@@ -2,6 +2,9 @@
   "name": "csrt",
   "version": "1.0.0",
   "description": "Climate-Smart Restoration Tool",
+  "scripts": {
+    "start": "webpack-dev-server --hot --config webpack.dev.babel.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/consbio/csrt.git"

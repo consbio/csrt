@@ -1,2 +1,6 @@
 node_modules/
 /config.json
+__pycache__
+*.pyc
+/data
+/webpack-stats.json
