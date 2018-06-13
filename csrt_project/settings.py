@@ -42,7 +42,7 @@ SECRET_KEY = CONFIG.get(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = CONFIG.get('debug', True)
 
-ALLOWED_HOSTS = CONFIG.get('allowed-hosts', ['127.0.0.1'])
+ALLOWED_HOSTS = CONFIG.get('allowed-hosts', ['127.0.0.1', 'localhost'])
 INTERNAL_IPS = CONFIG.get('internal-ips', ['127.0.0.1'])
 
 # Application definition
