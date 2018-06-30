@@ -1,4 +1,8 @@
 @import '../../seedsource-core/javascript/scss/variables';
-@import '../../seedsource-core/javascript/scss/seedsource';
 
 $primary: $turquoise;
+$tabs-link-active-color: $primary;
+$tabs-toggle-link-active-background-color: $primary;
+$tabs-toggle-link-active-border-color: $primary;
+
+@import '../../seedsource-core/javascript/scss/seedsource';

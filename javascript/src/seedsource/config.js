@@ -1,5 +1,5 @@
 const config = {
-    navbarClass: 'is-primary',
+    navbarClass: 'is-black',
     apiRoot: '/csrt/'
 }
 
