@@ -179,6 +179,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 CELERY_TRACK_STARTED = True
+CELERY_RESULT_BACKEND = 'django-db'
 CELERYBEAT_SCHEDULE = {
     'cleanup_temporary_services': {
         'task': 'ncdjango.geoprocessing.celery_tasks.cleanup_temporary_services',
