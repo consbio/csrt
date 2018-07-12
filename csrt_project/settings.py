@@ -63,7 +63,8 @@ INSTALLED_APPS = (
     'webpack_loader',
 
     'seedsource_core.django.seedsource',
-    'seedsource_core.django.accounts'
+    'seedsource_core.django.accounts',
+    'csrt'
 )
 
 MIDDLEWARE_CLASSES = (
