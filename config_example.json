@@ -2,5 +2,6 @@
   "secret-key": "change-me",
   "db_name": "csrt",
   "db_user": "csrt",
-  "db_password": "csrt"
+  "db_password": "csrt",
+  "mbtileserverRoot": "http://localhost:3333/"
 }
