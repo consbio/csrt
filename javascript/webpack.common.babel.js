@@ -42,6 +42,9 @@ export default {
             path.resolve('../seedsource-core/javascript/scss'),
             path.resolve('./')
         ],
+        alias: {
+            core: path.resolve('../seedsource-core/javascript/src')
+        },
         extensions: ['.js', '.jsx']
     }
 }
