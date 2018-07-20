@@ -1,9 +1,10 @@
-const config = {
-    navbarClass: 'is-dark',
-    apiRoot: '/csrt/'
-}
+import coreConfig from 'core/seedsource/config'
 
-const layerLabels = {
+const config = {
+    navbarClass: 'is-dark is-topo',
+    apiRoot: '/csrt/',
+    logo: null,
+
     labels: [
         {
           serviceName: "wa_new_zones-pipo",
@@ -93,9 +94,36 @@ const layerLabels = {
         {
           serviceName: "us_eco_l3",
           label: "Level III Ecoregions",
-          style: { color: "#7FFF00" }
+          style: { weight: 1, color: "#666", opacity: .5 }
+        }
+    ],
+
+    species: [
+        {
+            name: 'artr',
+            label: 'Great Basin sagebrush'
+        }
+    ],
+
+    functions: [
+        {
+            name: 'FD',
+            label: 'Flower Date',
+            fn: '381 + (-1.72*LAT) + (-0.011*DD18)',
+            transfer: 10.4,
+            customTransfer: false,
+            species: ['artr']
+        },
+        {
+            name: 'S',
+            label: 'Survival',
+            fn: '-6.3 + (0.284*TD) + (0.007*PPTsm)',
+            transfer: 0.46,
+            customTransfer: false,
+            species: ['artr']
         }
     ]
+
 }
 
-export default Object.assign(config, layerLabels, window.SS_CONFIG)
+export default Object.assign(coreConfig, config)
