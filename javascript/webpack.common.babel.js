@@ -33,7 +33,7 @@ export default {
             },
             {
                 test: /\.jison$/,
-                loader: 'jison-loader'
+                loader: path.resolve('./loaders/jison-loader.js')
             }
         ]
     },
@@ -49,6 +49,9 @@ export default {
         alias: {
             core: path.resolve('../seedsource-core/javascript/src')
         },
-        extensions: ['.js', '.jsxx']
+        extensions: ['.js', '.jsx']
+    },
+    node: {
+        fs: 'empty'
     }
 }

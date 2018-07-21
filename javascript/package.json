@@ -17,8 +17,8 @@
   "homepage": "https://github.com/consbio/csrt",
   "devDependencies": {
     "babel-core": "^6.26.3",
-    "babel-polyfill": "^6.26.0",
     "babel-loader": "^7.1.4",
+    "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
@@ -37,6 +37,8 @@
   },
   "dependencies": {
     "bulma": "^0.7.1",
+    "file-system": "^2.2.2",
+    "jison": "^0.4.18",
     "seedsource-core": "file:../seedsource-core/javascript",
     "shpjs": "^3.4.2"
   }
