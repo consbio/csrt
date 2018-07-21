@@ -30,6 +30,10 @@ export default {
             {
                 test: /\.(png|gif|jpe?g|svg)$/,
                 loader: 'file-loader'
+            },
+            {
+                test: /\.jison$/,
+                loader: 'jison-loader'
             }
         ]
     },
@@ -45,6 +49,6 @@ export default {
         alias: {
             core: path.resolve('../seedsource-core/javascript/src')
         },
-        extensions: ['.js', '.jsx']
+        extensions: ['.js', '.jsxx']
     }
 }
