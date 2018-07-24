@@ -12,5 +12,5 @@ phases:
       - (cd csrt-build/javascript && npm run-script build)
 
 artifacts:
-  files: "csrt-build/**/*"
+  files: "**/*"
   base-directory: "csrt-build"
