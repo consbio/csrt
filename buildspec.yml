@@ -6,6 +6,7 @@ phases:
       - git clone https://github.com/consbio/csrt.git csrt-build
       - (cd csrt-build/ && git checkout genecological-fn && git submodule update --init)
       - (cd csrt-build/javascript && npm install)
+      - (cd csrt-build/seedsource-core/javascript && npm install)
   build:
     commands:
       - (cd csrt-build/javascript && npm run-script build)
