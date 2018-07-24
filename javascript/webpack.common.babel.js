@@ -29,7 +29,10 @@ export default {
             },
             {
                 test: /\.(png|gif|jpe?g|svg)$/,
-                loader: 'file-loader'
+                loader: 'file-loader',
+                options: {
+                    name: '[name].[hash].[ext]'
+                }
             },
             {
                 test: /\.jison$/,

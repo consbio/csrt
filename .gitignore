@@ -6,3 +6,4 @@ __pycache__
 /webpack-stats.json
 tiles/*
 !tiles/.gitkeep
+javascript/build/*
