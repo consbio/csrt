@@ -3,12 +3,12 @@ version: 0.2
 phases:
   install:
     commands:
-      - git clone https://github.com/consbio/csrt.git
-      - (cd csrt && git submodule init)
-      - (cd csrt/javascript && npm install)
+      - git clone https://github.com/consbio/csrt.git csrt-build
+      - (cd csrt-build && git submodule init)
+      - (cd csrt-build/javascript && npm install)
   build:
     commands:
-      - (cd csrt/javascript && npm run-script build)
+      - (cd csrt-build/javascript && npm run-script build)
 
 artifacts:
-  files: "csrt/**/*"
+  files: "csrt-build/**/*"
