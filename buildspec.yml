@@ -13,3 +13,4 @@ phases:
 
 artifacts:
   files: "csrt-build/**/*"
+  base-directory: "csrt-build"
