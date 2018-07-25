@@ -180,6 +180,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = CONFIG.get('static-root', '/var/www/static/')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'javascript/build')
+]
 
 CELERY_TRACK_STARTED = True
 CELERY_RESULT_BACKEND = 'django-db'
