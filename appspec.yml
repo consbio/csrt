@@ -12,4 +12,4 @@ hooks:
     - location: CodeDeploy/AfterInstall.sh
       runas: csrt
     - location: CodeDeploy/AfterInstall-root.sh
-      runas: csrt
+      runas: root
