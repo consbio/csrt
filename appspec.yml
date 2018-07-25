@@ -5,5 +5,11 @@ files:
     destination: /home/csrt/apps/csrt
 permissions:
   - object: .
-    owner: spht
-    group: spht
+    owner: csrt
+    group: csrt
+hooks:
+  AfterInstall:
+    - location: CodeDeploy/AfterInstall.sh
+      runas: csrt
+    - location: CodeDeploy/AfterInstall-root.sh
+      runas: csrt
