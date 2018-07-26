@@ -65,6 +65,7 @@ INSTALLED_APPS = (
 
     'seedsource_core.django.seedsource',
     'seedsource_core.django.accounts',
+    'seedsource_core.django.preview',
     'csrt'
 )
 
@@ -72,6 +73,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    'seedsource_core.django.preview.middleware.PreviewAccessMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -256,3 +258,6 @@ NC_SERVICE_DATA_ROOT = 'data/ncdjango/services/'
 DATASET_DOWNLOAD_DIR = 'data/downloads'
 
 SEEDSOURCE_TITLE = 'Climate Smart Restoration Tool'
+
+PREVIEW_MODE = CONFIG.get('preview', False)
+PREVIEW_PASSWORD = 'csrtearlyaccess'
