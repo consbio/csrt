@@ -184,7 +184,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'javascript/build')
 ]
 
-CELERY_TRACK_STARTED = True
+CELERY_TASK_TRACK_STARTED = True
 CELERY_RESULT_BACKEND = 'django-db'
 CELERYBEAT_SCHEDULE = {
     'cleanup_temporary_services': {

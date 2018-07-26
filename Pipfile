@@ -13,6 +13,7 @@ social-auth-app-django = "*"
 "psycopg2" = "*"
 djangorestframework-filters = "*"
 django-webpack-loader = "*"
+celery = "==4.1.*"
 
 [dev-packages]
 
