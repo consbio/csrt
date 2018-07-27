@@ -95,6 +95,11 @@ const config = {
           serviceName: "us_eco_l3",
           label: "Level III Ecoregions",
           style: { weight: 1, color: "#666", opacity: .5 }
+        },
+        {
+            serviceName: "cb_2017_us_county_20m",
+            label: "U.S. Counties",
+            style: {weight: 1, color: '#559', opacity: .5}
         }
     ],
 
