@@ -5,6 +5,15 @@ import common from './webpack.common.babel'
 
 export default merge(common, {
     devtool: 'source-map',
+    module: {
+        rules: [
+            {
+                enforce: 'pre',
+                test: /\.jsx?$/,
+                use: ['source-map-loader']
+            }
+        ]
+    },
     plugins: [
         new webpack.optimize.ModuleConcatenationPlugin(),
         new webpack.optimize.UglifyJsPlugin({

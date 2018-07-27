@@ -10,7 +10,7 @@ export default {
     ],
     plugins: [
         new BundleTracker({filename: '../webpack-stats.json'}),
-        new ExtractTextPlugin({filename: '[name].bundle.css'})
+        new ExtractTextPlugin({filename: '[name].[hash].bundle.css'})
     ],
     module: {
         rules: [
