@@ -2,3 +2,4 @@
 
 systemctl reload gunicorn
 systemctl reload celery
+systemctl restart mbtileserver
