@@ -14,6 +14,7 @@ social-auth-app-django = "*"
 djangorestframework-filters = "*"
 django-webpack-loader = "*"
 celery = "==4.1.*"
+weasyprint = "==0.42.*"
 
 [dev-packages]
 

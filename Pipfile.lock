@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "530e28f49f0d0332f86247f2346b556e47e5b7e208d7c4bfa641b8f2bfa17526"
+            "sha256": "b914dbab4d313205c60b0a0d8b1b4516c58dcb79345a1501765dfe11461b23b3"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -314,10 +314,10 @@
         },
         "geopy": {
             "hashes": [
-                "sha256:8e02ef151c10dadacee3617f46494a1f80ef18943b507d417b3ad0ebdaa39844",
-                "sha256:c501942dbefd40e02497ec434213d0e7965427aac0748397bcda69a2372f6dcf"
+                "sha256:76654405eb69b01a2b8d113ab2ae101513cbeeb1272b0a472a7050631dadefa0",
+                "sha256:a70ff7d0fed8574384a033b46a0cd07ed7bf824901031da6e315f63e6d70394e"
             ],
-            "version": "==1.15.0"
+            "version": "==1.16.0"
         },
         "html5lib": {
             "hashes": [
@@ -674,17 +674,17 @@
         },
         "pytest": {
             "hashes": [
-                "sha256:0453c8676c2bee6feb0434748b068d5510273a916295fd61d306c4f22fbfd752",
-                "sha256:4b208614ae6d98195430ad6bde03641c78553acee7c83cec2e85d613c0cd383d"
+                "sha256:341ec10361b64a24accaec3c7ba5f7d5ee1ca4cebea30f76fad3dd12db9f0541",
+                "sha256:952c0389db115437f966c4c2079ae9d54714b9455190e56acebe14e8c38a7efa"
             ],
-            "version": "==3.6.3"
+            "version": "==3.6.4"
         },
         "pytest-django": {
             "hashes": [
-                "sha256:088b66211c57972e7bd072ba73ccec1c3b6f6185f894b3b8eb966d2f3b7d46cb",
-                "sha256:3fea4d0a84bf3af1f1e82448b9a91b3ddb22b659d802e026ae843040da0c3220"
+                "sha256:434abfd2afe61b69a58af41e7339617f3aa33dc9a05e3b77fa5955204a61b865",
+                "sha256:a73e355138675db8f535777ddf34bde28580b688be17dc21d0efa65e5c16927c"
             ],
-            "version": "==3.3.2"
+            "version": "==3.3.3"
         },
         "python-dateutil": {
             "hashes": [
@@ -833,6 +833,7 @@
                 "sha256:4d35e37cf9d2cea199ddfe4b038c80024619e8a05a2f2eb99b80a2bfb6063eb7",
                 "sha256:a9d198afb74cf4f29275cca7dc5d42eafd2d6abed3edb76c2d0d0429fead3907"
             ],
+            "index": "pypi",
             "version": "==0.42.3"
         },
         "webencodings": {

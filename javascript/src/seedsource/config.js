@@ -6,6 +6,7 @@ const config = {
     logo: null,
 
     labels: [
+        // Seedzones
         {
           serviceName: "wa_new_zones-pipo",
           label: "Washington (2002) ponderosa pine",
@@ -91,6 +92,8 @@ const config = {
           label: "Oregon (1996) western redcedar",
           style: { color: "#00FFFF" }
         },
+
+        // Layers
         {
           serviceName: "us_eco_l3",
           label: "Level III Ecoregions",
@@ -150,7 +153,7 @@ const config = {
         // {
         //     name: 'FD',
         //     label: 'Flower Date',
-        //     fn: '381 + (-1.72*LAT) + (-0.011*DD18)',
+        //     fn: '381 + (-1.72*LAT) + (-0.011*DD_18)',
         //     transfer: 10.4,
         //     customTransfer: false,
         //     species: ['artr']
