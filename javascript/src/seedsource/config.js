@@ -166,8 +166,11 @@ const config = {
         //     customTransfer: false,
         //     species: ['artr']
         // }
-    ]
+    ],
 
+    text: {
+        climate_step_site_help: 'When should plants be best adapted to the planting site?'
+    }
 }
 
 export default Object.assign(coreConfig, config)
