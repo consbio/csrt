@@ -143,29 +143,21 @@ const config = {
 
     functions: [
         {
-            name: 'TST',
-            label: 'Test',
-            fn: 'MAT + MAP',
-            transfer: 10,
+            name: 'FD',
+            label: 'Flower Date',
+            fn: '381 + (-1.72*LAT) + (-0.011*DD_18)',
+            transfer: 10.4,
+            customTransfer: false,
+            species: ['artr']
+        },
+        {
+            name: 'S',
+            label: 'Survival',
+            fn: '-6.3 + (0.284*TD) + (0.007*PPT_sm)',
+            transfer: 0.46,
             customTransfer: false,
             species: ['artr']
         }
-        // {
-        //     name: 'FD',
-        //     label: 'Flower Date',
-        //     fn: '381 + (-1.72*LAT) + (-0.011*DD_18)',
-        //     transfer: 10.4,
-        //     customTransfer: false,
-        //     species: ['artr']
-        // },
-        // {
-        //     name: 'S',
-        //     label: 'Survival',
-        //     fn: '-6.3 + (0.284*TD) + (0.007*PPTsm)',
-        //     transfer: 0.46,
-        //     customTransfer: false,
-        //     species: ['artr']
-        // }
     ],
 
     text: {
