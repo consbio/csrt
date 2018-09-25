@@ -1,4 +1,21 @@
 import coreConfig from 'core/seedsource/config'
+import SpeciesConstraint from 'seedsource/containers/SpeciesConstraint'
+
+const serializeSpeciesConstraint = ({ objective, climate }, { species }) => {
+    let { time, model } = (objective === 'seedlots' ? climate.seedlot : climate.site)
+    let climateFragment
+
+    if (time === '1961_1990' || time === '1981_2010') {
+        climateFragment = time
+    }
+    else {
+        climateFragment = `${model}_${time}`
+    }
+
+    return {
+        service: `sage_niche_${climateFragment}`
+    }
+}
 
 const config = {
     navbarClass: 'is-dark is-topo',
@@ -159,6 +176,35 @@ const config = {
             species: ['artr']
         }
     ],
+
+    constraints: {
+        objects: Object.assign(coreConfig.constraints.objects, {
+            arwy: {
+                component: SpeciesConstraint,
+                constraint: 'raster',
+                values: {
+                    species: 'arwy',
+                    label: 'Wyoming big sagebrush'
+                },
+                serialize: serializeSpeciesConstraint
+            }
+        }),
+        categories: [
+            ...coreConfig.constraints.categories,
+            {
+                name: 'species',
+                label: 'Species Range',
+                type: 'category',
+                items: [
+                    {
+                        name: 'arwy',
+                        label: 'Wyoming big sagebrush',
+                        type: 'constraint'
+                    }
+                ]
+            }
+        ]
+    },
 
     text: {
         climate_step_site_help: 'When should plants be best adapted to the planting site?'
