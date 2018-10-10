@@ -170,7 +170,7 @@ const config = {
         {
             name: 'S',
             label: 'Survival',
-            fn: '-6.3 + (0.284*TD) + (0.007*PPT_sm)',
+            fn: '-6.3 + (0.284*TD/10) + (0.007*PPT_sm)', // TD values are multiplied, so divide by 10
             transfer: 0.46,
             customTransfer: false,
             species: ['artr']
