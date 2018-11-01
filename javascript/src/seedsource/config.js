@@ -174,6 +174,7 @@ const config = {
             label: 'Flower Date',
             fn: '381 + (-1.72*LAT) + (-0.011*DD_18)',
             transfer: 10.4,
+            units: 'days',
             customTransfer: false,
             species: ['artr']
         },
