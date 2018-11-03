@@ -207,7 +207,7 @@ const config = {
                 constraint: 'raster',
                 values: {
                     species: 'artr',
-                    label: 'Wyoming/Basin Big Sagebrush'
+                    label: 'Wyoming/Basin Big Sagebrush Range'
                 },
                 serialize: serializeSpeciesConstraint
             }

@@ -46,6 +46,8 @@ ALLOWED_HOSTS = CONFIG.get('allowed-hosts', ['127.0.0.1', 'localhost'])
 INTERNAL_IPS = CONFIG.get('internal-ips', ['127.0.0.1'])
 MBTILESERVER_ROOT = CONFIG.get('mbtileserverRoot')
 
+PORT = CONFIG.get('port', 80)
+
 # Application definition
 
 INSTALLED_APPS = (
