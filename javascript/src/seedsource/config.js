@@ -139,6 +139,10 @@ const config = {
             label: 'Wyoming/Basin Big Sagebrush'
         },
         {
+            name: 'atva',
+            label: 'Mountain big sagebrush'
+        },
+        {
             name: 'psme',
             label: 'Douglas-fir',
         },
@@ -176,7 +180,7 @@ const config = {
             transfer: 10.4,
             units: 'days',
             customTransfer: false,
-            species: ['artr']
+            species: ['artr', 'atva']
         },
         {
             name: 'S',
@@ -185,6 +189,14 @@ const config = {
             transfer: 0.46,
             customTransfer: false,
             species: ['artr']
+        },
+        {
+            name: 'S-atva',
+            label: 'Survival',
+            fn: '-5.074 + (0.216 * TD)',
+            transfer: 0.292,
+            customTransfer: false,
+            species: ['atva']
         }
     ],
 

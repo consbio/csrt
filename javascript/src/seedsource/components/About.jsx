@@ -5,7 +5,7 @@ export default () => (
     <div>
         <h4 className="title is-4">Planting for the future</h4>
         <img src={SageImage} className="about-sage" />
-        <p classNmae="about-text">
+        <p className="about-text">
             Over a century of genetic research has shown that environment, in particularly climate, strongly affects
             plant genetic adaptation and the geography distance seed can be moved from its source. The CSRT was
             developed to provide information on seed collection and transfer of native plants. The CSRT maps current
