@@ -1,0 +1,6 @@
+
+=== 7. Apply Constraints
+
+The CSRT is capable of constraining seed transfer based on available species distribution models (SDMs) and/or
+ecoregions. If a SDM is available for the species of interest, we suggest using this constraint. The SDM constraint is
+aligned with the climate scenario in Step 4 when available.

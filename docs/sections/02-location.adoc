@@ -1,0 +1,25 @@
+
+=== 2. Select Location
+
+You can either enter coordinates or click on the map to indicate the location of your seedlot or planting site. The
+location of a seedlot represents the geographic location where it is best adapted—that is, the center of its adaptive
+climate space.
+
+==== Enter your location as coordinates
+
+You can enter the latitude and longitude of your location in decimal degrees.
+
+==== Use the map to select your location
+
+Alternatively, use the pan and zoom tools to navigate to your area of interest, and then click on the map. This will
+show the latitude, longitude, and elevation of your location. If you have already selected climate variables or species
+and function in Step 5, it will also show their values.
+
+If you click on the Set Point button, your current coordinates and other location information will be automatically
+set for use by the program. If you click outside of the areas covered by the SST, you will see “N/A” listed for
+elevation.
+
+Note: North America is divided into regions to reduce processing time. When you use the Set Point button, the SST
+automatically shows the options associated with your selected region. If you click in a new region, new options become
+available.
+

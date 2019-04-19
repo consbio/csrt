@@ -1,0 +1,35 @@
+
+=== 4. Select Climate Scenarios
+
+==== Which climate are the seedlots adapted to?
+
+Select time period - The first step is to identify which climate the seedlots are adapted to, which is typically
+assumed to be the climate having the greatest influence on the seedlot’s parents. Using the drop-down menu, select
+either:
+
+* 1961 - 1990
+* 1981 - 2010
+
+For longer-lived plants (e.g. trees) it is recommended to choose 1961 -1990. For shorter-lived species (e.g., grass
+and forbs) a 1981-2010 period may be more suitable.
+
+==== When should plants be best adapted to the planting site?
+
+Select time period - The next step is to choose when you want the plants to be optimally adapted to their planting
+site. Typical choices are the ‘current’ climate (e.g., 1981-2010), or if you want to account for climate change, some
+future time period. Use the drop-down menu to select either:
+
+* 1961 – 1990
+* 1981 – 2010
+* 2011 - 2040
+* 2041 – 2070
+* 2071 - 2100
+
+Select representative concentration pathway (RCP) - For future climates (i.e., 2011 to 2100), also select the RCP,
+which is associated with different levels of atmospheric greenhouse gases and climate change. According to IPCC AR5,
+the RCP4.5 “stabilization” scenario has a projected increase in mean annual temperature of 1.8°C by 2100
+(range = 1.1-2.6°C), whereas the RCP8.5 “business as usual” scenario has a projected increase of 3.7°C by 2100
+(range = 2.6-4.8°C). Use the drop-down menu to select either:
+
+* RCP4.5
+* RCP8.5

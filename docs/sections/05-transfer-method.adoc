@@ -1,0 +1,38 @@
+
+=== 5. Select Transfer Limit Method
+
+The CSRT uses three approaches to construct and map transfer limits. The “custom” and “zone” approaches are based on
+user-defined climatic variables and thresholds. The “function” approach uses genecological functions. Genecological
+functions are an association between common garden trait data and the climate derived from seed source populations. A
+limited number of species are currently available for the “function” approach, but more species will be added from
+existing and ongoing common garden studies. If the species of interest is available for the Function method, we
+suggest using this approach. Below the methods are described in more detail.
+
+Select the Custom method to enter your own custom transfer limit, use the Zone method to use an existing zone to
+calculate a transfer limit, or selection the Function method to calculate seed transfer distances for certain species.
+
+==== Custom method
+
+Click on the Custom button to enter your own transfer limits for one or more climate variables.
+
+==== Zone method
+
+Click on the Zone button to use an existing zone to calculate transfer limits for one or more climate variables.
+Using the zone approach involves three steps.
+
+===== Select the climatic center for mapped output
+
+If you have chosen to find planting sites for a seedlot, you need to specify the climatic center of the mapped output.
+If you have a seedlot from a specific known location, you would typically use that specific location (i.e., your
+selected coordinates). If you have a seedlot that represents an entire seed zone, it is probably more appropriate to
+use the climatic center of your chosen zone. Thus, for finding planting sites, you must choose between the following
+two alternatives:
+
+* The value at the selected location – If you choose this option, your current coordinates (selected in Step 2) will be
+used as the climatic center of your mapped output.
+* The climatic center of the zone - If you choose this option, the calculated climatic center of the selected zone is
+used as the climatic center of your mapped output.
+
+==== Function method
+
+Select the species using the drop-down list. Traits, genecological values and limits will be pre-populated in Step 6.

@@ -1,0 +1,23 @@
+:doctype: book
+:source-highlighter: rouge
+:toc:
+:imagesdir: ./img
+:figure-caption!:
+
+= Climate-Smart Restoration Tool (CSRT): User Guide
+
+== Introduction
+
+The CSRT calculates and maps seed transfer limits for plant species. This versatile tool uses two types of data input,
+empirical trait data from preloaded genecological studies or provisional data from user-defined climate variables, to
+construct site-specific seed transfer limits for ecological restoration and planning. The tool is intended to inform
+land managers, seed vendors and scientists of seed transfer limits for individual plant taxa. The eight steps described
+below will provide guidelines to tailor the tool to your specific restoration needs.
+
+include::sections/01-objective.adoc[]
+include::sections/02-location.adoc[]
+include::sections/03-region.adoc[]
+include::sections/04-climate.adoc[]
+include::sections/05-transfer-method.adoc[]
+include::sections/06-traits.adoc[]
+include::sections/07-constraints.adoc[]

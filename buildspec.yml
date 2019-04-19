@@ -3,6 +3,9 @@ version: 0.2
 phases:
   install:
     commands:
+      - apt install -y ruby
+      - gem install asciidoctor-pdf --pre
+      - gem install rouge
       - git clone https://github.com/consbio/csrt.git csrt-build
       - (cd csrt-build/ && git checkout master && git submodule update --init)
       - (cd csrt-build/javascript && npm install --no-shrinkwrap)
@@ -10,6 +13,7 @@ phases:
   build:
     commands:
       - (cd csrt-build/javascript && npm run-script build)
+      - (cd docs && asciidoctor-pdf index.adoc && mv index.pdf ../csrt/static/CSRT\ Instructions.pdf)
 
 artifacts:
   files: "**/*"

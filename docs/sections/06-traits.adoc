@@ -1,0 +1,6 @@
+
+=== 6. Select Traits
+
+Traits will be populated based on the species selection. We recommend the seed transfer limit default setting to be
+used for mapping transfer distances.
+

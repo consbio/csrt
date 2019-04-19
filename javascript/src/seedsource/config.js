@@ -193,7 +193,7 @@ const config = {
         {
             name: 'S-atva',
             label: 'Survival',
-            fn: '-5.074 + (0.216 * TD)',
+            fn: '-5.074 + (0.216*TD/10)',
             transfer: 0.292,
             customTransfer: false,
             species: ['atva']
