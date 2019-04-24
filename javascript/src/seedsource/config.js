@@ -1,22 +1,6 @@
 import coreConfig from 'core/seedsource/config'
 import SpeciesConstraint from 'seedsource/containers/SpeciesConstraint'
 
-const serializeSpeciesConstraint = ({ objective, climate }, { species }) => {
-    let { time, model } = (objective === 'seedlots' ? climate.seedlot : climate.site)
-    let climateFragment
-
-    if (time === '1961_1990' || time === '1981_2010') {
-        climateFragment = time
-    }
-    else {
-        climateFragment = `${model}_${time}`
-    }
-
-    return {
-        service: `sage_niche_${climateFragment}`
-    }
-}
-
 const config = {
     navbarClass: 'is-dark is-topo',
     apiRoot: '/csrt/',
@@ -207,9 +191,104 @@ const config = {
                 constraint: 'raster',
                 values: {
                     species: 'artr',
-                    label: 'Wyoming/Basin Big Sagebrush Range'
+                    label: 'Wyoming/Basin Big Sagebrush Range',
+                    isRegion: false
                 },
-                serialize: serializeSpeciesConstraint
+                serialize: ({ objective, climate }) => {
+                    let { time, model } = (objective === 'seedlots' ? climate.seedlot : climate.site)
+                    let climateFragment
+
+                    if (time === '1961_1990' || time === '1981_2010') {
+                        climateFragment = time
+                    }
+                    else {
+                        climateFragment = `${model}_${time}`
+                    }
+
+                    return {
+                        service: `sage_niche_${climateFragment}`
+                    }
+                }
+            },
+            'artr-colorado-plateau': {
+                component: SpeciesConstraint,
+                constraint: 'raster',
+                values: {
+                    species: 'artr',
+                    label: 'Colorado Plateau Range',
+                    isRegion: true
+                },
+                serialize: () => ({service: 'constraints/artr/region/ColoradoPlateau'})
+            },
+            'artr-columbia-basin': {
+                component: SpeciesConstraint,
+                constraint: 'raster',
+                values: {
+                    species: 'artr',
+                    label: 'Columbia Basin Range',
+                    isRegion: true
+                },
+                serialize: () => ({service: 'constraints/artr/region/ColumbiaBasin'})
+            },
+            'artr-great-basin': {
+                component: SpeciesConstraint,
+                constraint: 'raster',
+                values: {
+                    species: 'artr',
+                    label: 'Great Basin Range',
+                    isRegion: true
+                },
+                serialize: () => ({service: 'constraints/artr/region/GreatBasin'})
+            },
+            'artr-wyoming-basin': {
+                component: SpeciesConstraint,
+                constraint: 'raster',
+                values: {
+                    species: 'artr',
+                    label: 'Wyoming Basin Range',
+                    isRegion: true
+                },
+                serialize: () => ({service: 'constraints/artr/region/WyomingBasin'})
+            },
+            'atva-central-basin': {
+                component: SpeciesConstraint,
+                constraint: 'raster',
+                values: {
+                    species: 'atva',
+                    label: 'Central Basin Range',
+                    isRegion: true
+                },
+                serialize: () => ({service: 'constraints/atva/region/CentralBasin_Range'})
+            },
+            'atva-colorado-plateaus-region': {
+                component: SpeciesConstraint,
+                constraint: 'raster',
+                values: {
+                    species: 'atva',
+                    label: 'Colorado Plateaus Region',
+                    isRegion: true
+                },
+                serialize: () => ({service: 'constraints/atva/region/ColoradoPlateaus'})
+            },
+            'atva-columbia-plateau-region': {
+                component: SpeciesConstraint,
+                constraint: 'raster',
+                values: {
+                    species: 'atva',
+                    label: 'Columbia Plateau Region',
+                    isRegion: true
+                },
+                serialize: () => ({service: 'constraints/atva/region/ColumbiaPlateau'})
+            },
+            'atva-southern-rockies-region': {
+                component: SpeciesConstraint,
+                constraint: 'raster',
+                values: {
+                    species: 'atva',
+                    label: 'Southern Rockies Region',
+                    isRegion: true
+                },
+                serialize: () => ({service: 'constraints/atva/region/SouthernRockies'})
             }
         }),
         categories: [
@@ -223,6 +302,67 @@ const config = {
                         name: 'artr',
                         label: 'Wyoming/Basin Big Sagebrush',
                         type: 'constraint'
+                    }
+                ]
+            },
+            {
+                name: 'region',
+                label: 'Species Region',
+                type: 'category',
+                items: [
+                    {
+                        name: 'region-artr',
+                        label: 'Wyoming/Basin Big Sagebrush',
+                        type: 'category',
+                        items: [
+                            {
+                                name: 'artr-colorado-plateau',
+                                label: 'Colorado Plateau Range',
+                                type: 'constraint'
+                            },
+                            {
+                                name: 'artr-columbia-basin',
+                                label: 'Columbia Basin Range',
+                                type: 'constraint'
+                            },
+                            {
+                                name: 'artr-great-basin',
+                                label: 'Great Basin Range',
+                                type: 'constraint'
+                            },
+                            {
+                                name: 'artr-wyoming-basin',
+                                label: 'Wyoming Basin Range',
+                                type: 'constraint'
+                            }
+                        ]
+                    },
+                    {
+                        name: 'region-atva',
+                        label: 'Mountain big sagebrush',
+                        type: 'category',
+                        items: [
+                            {
+                                name: 'atva-central-basin',
+                                label: 'Central Basin Range',
+                                type: 'constraint'
+                            },
+                            {
+                                name: 'atva-colorado-plateaus-region',
+                                label: 'Colorado Plateaus Region',
+                                type: 'constraint'
+                            },
+                            {
+                                name: 'atva-columbia-plateau-region',
+                                label: 'Columbia Plateau Region',
+                                type: 'constraint'
+                            },
+                            {
+                                name: 'atva-southern-rockies-region',
+                                label: 'Southern Rockies Region',
+                                type: 'constraint'
+                            }
+                        ]
                     }
                 ]
             }
