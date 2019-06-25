@@ -1,6 +1,6 @@
 
 === 7. Apply Constraints
 
-The CSRT is capable of constraining seed transfer based on available species distribution models (SDMs) and/or
-ecoregions. If a SDM is available for the species of interest, we suggest using this constraint. The SDM constraint is
-aligned with the climate scenario in Step 4 when available.
+The CSRT is capable of constraining seed transfer based on available species distribution models (SDMs), geographic distance, ecoregions, etc. If a SDM is available for the species of interest, we suggest using this as a constraint. The SDM constraint is aligned with the climate scenario in Step 4 when available.
+
+For sagebrush seed transfer, we recommend constraining projections based on the respective subspecies SDM (Wyoming or mountain big sagebrush) and by geographic distance using a 300 km extent. Since seed transfer distances can be large in big sagebrush, setting a geographic constraint is a conservative approach to maintain potential genetic structure among populations.
