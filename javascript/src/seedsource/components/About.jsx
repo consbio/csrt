@@ -1,10 +1,11 @@
 import React from 'react'
-import SageImage from '../../images/sage.gif'
+import CSRTImage from '../../images/csrt-collage.jpg'
 
 export default () => (
     <div>
         <h4 className="title is-4">Planting for the future</h4>
-        <img src={SageImage} className="about-sage" />
+        <img src={CSRTImage} className="csrt-image" />
+
         <p className="about-text">
             Over a century of genetic research has shown that environment, in particularly climate, strongly affects
             plant genetic adaptation and the geography distance seed can be moved from its source. The CSRT was
