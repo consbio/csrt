@@ -11,6 +11,10 @@ suggest using this approach. Below the methods are described in more detail.
 Select the Custom method to enter your own custom transfer limit, use the Zone method to use an existing zone to
 calculate a transfer limit, or selection the Function method to calculate seed transfer distances for certain species.
 
+==== Function method
+
+Select the species using the drop-down list. Traits, genecological values and limits will be pre-populated in Step 6. The trait values are based on statistical models developed from the literature (see Reference and additional information section).
+
 ==== Custom method
 
 Click on the Custom button to enter your own transfer limits for one or more climate variables.
@@ -33,6 +37,4 @@ used as the climatic center of your mapped output.
 * The climatic center of the zone - If you choose this option, the calculated climatic center of the selected zone is
 used as the climatic center of your mapped output.
 
-==== Function method
 
-Select the species using the drop-down list. Traits, genecological values and limits will be pre-populated in Step 6.
