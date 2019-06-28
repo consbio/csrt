@@ -15,13 +15,15 @@ export default () => (
         <p>&nbsp;</p>
         <h5 className="title is-5">Plants with genetic information</h5>
         <p className="about-text">
-            The CSRT using genecological functions to map seed transfer limits of select species. The number of
-            species with genetic information will evolve in time a more data becomes available.
+            Like the Seedlot Selection Tool (SST), the CSRT uses user-determined climate variables and thresholds to
+            define seed transfer limits.
         </p>
         <p>&nbsp;</p>
         <h5 className="title is-5">Plants without genetic information</h5>
         <p className="about-text">
-            The CSRT uses user defined climate variables and thresholds to define seed transfer limits.
+            The CSRT is capable of constraining seed transfer based on species distribution model (when available),
+            ecoregion, geographic distance and elevation. Please review the instructions, which have species-specific
+            recommendations for mapping seed transfer.
         </p>
         <p>&nbsp;</p>
         <h5 className="title is-5">Constraints</h5>
