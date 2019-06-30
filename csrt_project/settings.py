@@ -16,6 +16,7 @@ import os
 import random
 import string
 from datetime import timedelta
+from pathlib import Path
 
 from django.core.urlresolvers import reverse_lazy
 from trefoil.render.renderers.stretched import StretchedRenderer
@@ -257,9 +258,10 @@ NC_INSTALLED_INTERFACES = (
 
 NC_ENABLE_STRIDING = True
 NC_SERVICE_DATA_ROOT = 'data/ncdjango/services/'
-DATASET_DOWNLOAD_DIR = 'data/downloads'
+DATASET_DOWNLOAD_DIR = Path(BASE_DIR) / 'data' / 'downloads'
 
 SEEDSOURCE_TITLE = 'Climate Smart Restoration Tool'
+REPORT_PDF_TEMPLATE = 'pdf/csrt-report.html'
 
 PREVIEW_MODE = CONFIG.get('preview', False)
 PREVIEW_PASSWORD = 'csrtearlyaccess'
