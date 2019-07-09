@@ -210,6 +210,39 @@ const config = {
                     }
                 }
             },
+            atva: {
+                component: SpeciesConstraint,
+                constraint: 'raster',
+                values: {
+                    species: 'atva',
+                    label: 'Mountain big sagebrush Range',
+                    isRegion: false
+                },
+                serialize: ({ objective, climate }) => {
+                    let { time, model } = (objective === 'seedlots' ? climate.seedlot : climate.site)
+                    let serviceName
+
+                    if (time === '1961_1990') {
+                        serviceName = 'hist60'
+                    }
+                    else if (time === '1981_2010') {
+                        serviceName = 'cur1980_10'
+                    }
+                    else {
+                        const year = {
+                            '2025': '20',
+                            '2055': '50',
+                            '2085': '80'
+                        }[time]
+
+                        serviceName = `${model}_${year}`
+                    }
+
+                    return {
+                        service: `constraints/atva/range/${serviceName}`
+                    }
+                }
+            },
             'artr-colorado-plateau': {
                 component: SpeciesConstraint,
                 constraint: 'raster',
@@ -301,6 +334,11 @@ const config = {
                     {
                         name: 'artr',
                         label: 'Wyoming/Basin Big Sagebrush',
+                        type: 'constraint'
+                    },
+                    {
+                        name: 'atva',
+                        label: 'Mountain big sagebrush',
                         type: 'constraint'
                     }
                 ]
