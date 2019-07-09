@@ -8,9 +8,16 @@ export default () => (
 
         <p className="about-text">
             Over a century of genetic research has shown that environment, in particularly climate, strongly affects
-            plant genetic adaptation and the geography distance seed can be moved from its source. The CSRT was
-            developed to provide information on seed collection and transfer of native plants. The CSRT maps current
-            and future seed transfer limits for plant species with or without genetic information.
+            plant genetic adaptation and the geography distance seed can be moved from its source location. The Climate
+            Smart Restoration Tool (CSRT) was developed to provide information on seed collection and transfer of
+            native plants. The CSRT maps current and future seed transfer limits for plant species with or without
+            genetic information using climate data generating from ClimateNA (Wang et al. 2016). For information on
+            ClimateNA see:
+            <a href="https://adaptwest.databasin.org/pages/adaptwest-climatena">
+                adaptwest.databasin.org/pages/adaptwest-climatena
+            </a> and
+            <a href="https://seedlotselectiontool.org">seedlotselectiontool.org</a>
+            under the More Information tab.
         </p>
         <p>&nbsp;</p>
         <h5 className="title is-5">Plants with genetic information</h5>
