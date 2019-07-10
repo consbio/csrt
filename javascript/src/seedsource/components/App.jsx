@@ -9,6 +9,10 @@ export default class App extends React.Component {
     }
 
     render() {
-        return <CoreApp />
+        return (
+            <React.Fragment>
+                <CoreApp />
+            </React.Fragment>
+        )
     }
 }
