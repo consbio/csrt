@@ -12,11 +12,11 @@ export default () => (
             Smart Restoration Tool (CSRT) was developed to provide information on seed collection and transfer of
             native plants. The CSRT maps current and future seed transfer limits for plant species with or without
             genetic information using climate data generating from ClimateNA (Wang et al. 2016). For information on
-            ClimateNA see:
+            ClimateNA see:&nbsp;
             <a href="https://adaptwest.databasin.org/pages/adaptwest-climatena">
                 adaptwest.databasin.org/pages/adaptwest-climatena
-            </a> and
-            <a href="https://seedlotselectiontool.org">seedlotselectiontool.org</a>
+            </a> and&nbsp;
+            <a href="https://seedlotselectiontool.org">seedlotselectiontool.org</a>&nbsp;
             under the More Information tab.
         </p>
         <p>&nbsp;</p>
