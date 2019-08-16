@@ -6,7 +6,7 @@ name = "pypi"
 [packages]
 django = ">=1.11.23,<1.12"
 "rasterio" = "==1.0a12"
-"90ed60a" = {path = "./seedsource-core", editable = true}
+"pip" = {path = "./seedsource-core", editable = true}
 certifi = "*"
 django-celery-results = "*"
 social-auth-app-django = "*"
@@ -15,6 +15,7 @@ djangorestframework-filters = "*"
 django-webpack-loader = "*"
 celery = "==4.3.*"
 weasyprint = "==0.42.*"
+pyproj = "<2"
 
 [dev-packages]
 
