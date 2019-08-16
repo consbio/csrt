@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-django = "==1.11.*"
+django = ">=1.11.23,<1.12"
 "rasterio" = "==1.0a12"
 "90ed60a" = {path = "./seedsource-core", editable = true}
 certifi = "*"
@@ -13,7 +13,7 @@ social-auth-app-django = "*"
 "psycopg2" = "*"
 djangorestframework-filters = "*"
 django-webpack-loader = "*"
-celery = "==4.1.*"
+celery = "==4.3.*"
 weasyprint = "==0.42.*"
 
 [dev-packages]
