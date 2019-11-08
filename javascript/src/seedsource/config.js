@@ -153,6 +153,10 @@ const config = {
         {
             name: 'pimo',
             label: 'Western white pine',
+        },
+        {
+            name: 'pssp',
+            label: 'Bluebunch wheatgrass'
         }
     ],
 
@@ -181,6 +185,30 @@ const config = {
             transfer: 0.292,
             customTransfer: false,
             species: ['atva']
+        },
+        {
+            name: 'PC1',
+            label: 'PC1',
+            fn: '17.12 + 0.02*TD - 0.02*SHM + 0.47*EMT',
+            transfer: 1,  // Todo
+            customTransfer: false,
+            species: ['pssp']
+        },
+        {
+            name: 'PC2',
+            label: 'PC2',
+            fn: '3.37 + 0.02*TD - 0.007*SHM - 0.02*FFP',
+            transfer: 1,  // Todo
+            customTransfer: false,
+            species: ['pssp']
+        },
+        {
+            name: 'PC3',
+            label: 'PC3',
+            fn: '-2.07 - 0.004*PAS + 0.004*CMD',
+            transfer: 1, // Todo
+            customTransfer: false,
+            species: ['pssp']
         }
     ],
 
@@ -240,6 +268,39 @@ const config = {
 
                     return {
                         service: `constraints/atva/range/${serviceName}`
+                    }
+                }
+            },
+            pssp: {
+                component: SpeciesConstraint,
+                constraint: 'raster',
+                values: {
+                    species: 'pssp',
+                    label: 'Blubunch wheatgrass Range',
+                    isRegion: false
+                },
+                serialize: ({ objective, climate }) => {
+                    let { time, model } = (objective === 'seedlots' ? climate.seedlot : climate.site)
+                    let serviceName
+
+                    if (time === '1961_1990') {
+                        serviceName = 'hist60_90'
+                    }
+                    else if (time === '1981_2010') {
+                        serviceName = 'contemp80_10'
+                    }
+                    else {
+                        const year = {
+                            '2025': '2020',
+                            '2055': '2050',
+                            '2085': '2080'
+                        }[time]
+
+                        serviceName = `d${year}_${model}`
+                    }
+
+                    return {
+                        service: `constraints/pssp/range/${serviceName}`
                     }
                 }
             },
@@ -340,6 +401,11 @@ const config = {
                         name: 'atva',
                         label: 'Mountain big sagebrush',
                         type: 'constraint'
+                    },
+                    {
+                        name: 'pssp',
+                        label: 'Bluebrunch wheatgrass',
+                        type: 'consraint'
                     }
                 ]
             },
