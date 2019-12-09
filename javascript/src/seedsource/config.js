@@ -190,7 +190,7 @@ const config = {
             name: 'PC1',
             label: 'PC1',
             fn: '17.12 + 0.02*TD - 0.02*SHM + 0.47*EMT',
-            transfer: 1,  // Todo
+            transfer: 11.53,  // Todo
             customTransfer: false,
             species: ['pssp']
         },
@@ -198,7 +198,7 @@ const config = {
             name: 'PC2',
             label: 'PC2',
             fn: '3.37 + 0.02*TD - 0.007*SHM - 0.02*FFP',
-            transfer: 1,  // Todo
+            transfer: 10.45,  // Todo
             customTransfer: false,
             species: ['pssp']
         },
@@ -206,7 +206,7 @@ const config = {
             name: 'PC3',
             label: 'PC3',
             fn: '-2.07 - 0.004*PAS + 0.004*CMD',
-            transfer: 1, // Todo
+            transfer: 3.55, // Todo
             customTransfer: false,
             species: ['pssp']
         }
