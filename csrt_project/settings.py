@@ -121,6 +121,34 @@ DATABASES = {
     }
 }
 
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'stream': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler'
+        }
+    },
+    'loggers': {
+        'seedsource_core': {
+            'handlers': ['stream'],
+            'level': 'DEBUG',
+            'propagate': True
+        },
+        'django': {
+            'handlers': ['stream'],
+            'level': 'ERROR',
+            'propagate': True
+        },
+        'django.server': {
+            'handlers': ['stream'],
+            'level': 'ERROR',
+            'propagate': True
+        }
+    }
+}
+
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.google.GoogleOAuth2',
     'social_core.backends.facebook.FacebookOAuth2',
