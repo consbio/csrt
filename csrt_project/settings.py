@@ -99,7 +99,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'social_django.context_processors.backends',
                 'social_django.context_processors.login_redirect',
-                # 'csrt_project.context_processors.google_analytics'
+                'csrt_project.context_processors.google_analytics'
             ],
         },
     },
