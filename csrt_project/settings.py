@@ -18,7 +18,10 @@ import string
 from datetime import timedelta
 from pathlib import Path
 
+import sentry_sdk
 from django.core.urlresolvers import reverse_lazy
+from sentry_sdk.integrations.celery import CeleryIntegration
+from sentry_sdk.integrations.django import DjangoIntegration
 from trefoil.render.renderers.stretched import StretchedRenderer
 from trefoil.utilities.color import Color
 
@@ -293,3 +296,9 @@ REPORT_PDF_TEMPLATE = 'pdf/csrt-report.html'
 
 PREVIEW_MODE = CONFIG.get('preview', False)
 PREVIEW_PASSWORD = 'csrtearlyaccess'
+
+# Sentry
+SENTRY_DSN = CONFIG.get("sentry-dsn")
+
+if SENTRY_DSN:
+    sentry_sdk.init(dsn=SENTRY_DSN, integrations=[DjangoIntegration(), CeleryIntegration()])

@@ -16,6 +16,7 @@ django-webpack-loader = "*"
 celery = "==4.3.*"
 weasyprint = "==0.42.*"
 pyproj = "<2"
+sentry-sdk = "==0.16.1"
 
 [dev-packages]
 
