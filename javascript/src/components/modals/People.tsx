@@ -1,5 +1,5 @@
 import React, { RefObject } from 'react'
-import ModalCard from '../../../../../seedsource-ui/lib/components/ModalCard'
+import ModalCard from 'seedsource-ui/lib/components/ModalCard'
 import FSLogo from '../../../images/logos/usfs.png'
 import BLMLogo from '../../../images/logos/blm.png'
 import GBNPPLogo from '../../../images/logos/gbnpp.png'

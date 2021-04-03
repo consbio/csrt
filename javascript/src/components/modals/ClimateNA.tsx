@@ -1,5 +1,5 @@
 import React, { RefObject } from 'react'
-import ModalCard from '../../../../../seedsource-ui/lib/components/ModalCard'
+import ModalCard from 'seedsource-ui/lib/components/ModalCard'
 
 export default class ClimateNA extends React.Component {
   modalRef: RefObject<ModalCard> = React.createRef()
