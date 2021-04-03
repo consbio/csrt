@@ -1,16 +1,20 @@
 import React from 'react'
-import ClimateNAModal from './ClimateNAModal'
-import CSRTImage from '../../../images/csrt-collage.jpg'
+import CSRTImage from '../../images/csrt-collage.jpg'
+import ClimateNA from './modals/ClimateNA'
 
-export default () => {
-  const climatenaModal = React.createRef()
+const About = () => {
+  const climatenaModal: React.RefObject<ClimateNA> = React.createRef()
 
   return (
     <div>
-      <ClimateNAModal ref={climatenaModal} />
+      <ClimateNA ref={climatenaModal} />
 
       <h4 className="title is-4">Planting for the future</h4>
-      <img src={CSRTImage} className="csrt-image" />
+      <img
+        src={CSRTImage}
+        className="csrt-image"
+        alt="Four images: a hand holding seeds, a tractor plowing a field, sagebrush, sagebrush with hills in the background."
+      />
 
       <p className="about-text">
         Over a century of genetic research has shown that environment, in particularly climate, strongly affects plant
@@ -18,7 +22,7 @@ export default () => {
         Restoration Tool (CSRT) was developed to provide information on seed collection and transfer of native plants.
         The CSRT maps current and future seed transfer limits for plant species with or without genetic information
         using climate data generating from ClimateNA (Wang et al. 2016). For information on ClimateNA see the{' '}
-        <a onClick={() => climatenaModal.current.show()}>ClimateNA</a> link in the toolbar, and&nbsp;
+        <a onClick={() => climatenaModal.current?.show()}>ClimateNA</a> link in the toolbar, and&nbsp;
         <a href="https://adaptwest.databasin.org/pages/adaptwest-climatena">
           adaptwest.databasin.org/pages/adaptwest-climatena
         </a>
@@ -46,3 +50,5 @@ export default () => {
     </div>
   )
 }
+
+export default About

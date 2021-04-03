@@ -1,22 +1,25 @@
-import React from 'react'
-import ModalCard from 'seedsource/components/ModalCard'
-import ClimateNAModal from './ClimateNAModal'
-import Instructions from '../../../documents/CSRT Instructions.pdf'
-import fs_logo from '../../../images/logos/usfs.png'
-import blm_logo from '../../../images/logos/blm.png'
-import gbnpp_logo from '../../../images/logos/gbnpp.png'
-import osu_logo from '../../../images/logos/osu.png'
-import cbi_logo from '../../../images/logos/cbi.png'
+import React, { RefObject } from 'react'
+import ModalCard from '../../../../../seedsource-ui/lib/components/ModalCard'
+import FSLogo from '../../../images/logos/usfs.png'
+import BLMLogo from '../../../images/logos/blm.png'
+import GBNPPLogo from '../../../images/logos/gbnpp.png'
+import OSULogo from '../../../images/logos/osu.png'
+import CBILogo from '../../../images/logos/cbi.png'
 
-export default () => {
-  const climatenaModal = React.createRef()
-  const peopleModal = React.createRef()
+export default class People extends React.Component {
+  modalRef: RefObject<ModalCard> = React.createRef()
 
-  return [
-    <div className="has-text-dark is-size-6" key="modals">
-      <ClimateNAModal ref={climatenaModal} />
+  show = () => {
+    this.modalRef?.current?.show()
+  }
 
-      <ModalCard ref={peopleModal} title="People">
+  hide = () => {
+    this.modalRef?.current?.hide()
+  }
+
+  render() {
+    return (
+      <ModalCard ref={this.modalRef} title="People">
         <p>
           The Climate Smart Restoration Tool is a collaboration between the US Forest Service, Oregon State University,
           Bureau of Land Management and the Conservation Biology Institute. This tool uses some of the concepts and web
@@ -32,27 +35,27 @@ export default () => {
         <div className="columns">
           <div className="column">
             <a href="http://www.fs.fed.us/" target="_blank" rel="noreferrer">
-              <img src={fs_logo} alt="Forest Service" style={{ maxHeight: '50px' }} />
+              <img src={FSLogo} alt="Forest Service" style={{ maxHeight: '50px' }} />
             </a>
           </div>
           <div className="column">
             <a href="https://www.blm.gov/" target="_blank" rel="noreferrer">
-              <img src={blm_logo} alt="Conservation Biology Institute" style={{ maxHeight: '50px' }} />
+              <img src={BLMLogo} alt="Conservation Biology Institute" style={{ maxHeight: '50px' }} />
             </a>
           </div>
           <div className="column">
             <a href="http://www.greatbasinnpp.org/" target="_blank" rel="noreferrer">
-              <img src={gbnpp_logo} alt="Conservation Biology Institute" style={{ maxHeight: '50px' }} />
+              <img src={GBNPPLogo} alt="Conservation Biology Institute" style={{ maxHeight: '50px' }} />
             </a>
           </div>
           <div className="column">
             <a href="http://oregonstate.edu/" target="_blank" rel="noreferrer">
-              <img src={osu_logo} alt="Oregon State University" style={{ maxHeight: '50px' }} />
+              <img src={OSULogo} alt="Oregon State University" style={{ maxHeight: '50px' }} />
             </a>
           </div>
           <div className="column">
             <a href="http://consbio.org" target="_blank" rel="noreferrer">
-              <img src={cbi_logo} alt="Conservation Biology Institute" style={{ maxHeight: '50px' }} />
+              <img src={CBILogo} alt="Conservation Biology Institute" style={{ maxHeight: '50px' }} />
             </a>
           </div>
         </div>
@@ -95,16 +98,6 @@ export default () => {
           <a href="mailto:nik.molnar@consbio.org">nik.molnar@consbio.org</a>
         </p>
       </ModalCard>
-    </div>,
-
-    <a className="navbar-item" href={Instructions} target="_blank" key="instructions" rel="noreferrer">
-      Instructions
-    </a>,
-    <a className="navbar-item" onClick={() => climatenaModal.current.show()} key="climatena">
-      ClimateNA
-    </a>,
-    <a className="navbar-item" onClick={() => peopleModal.current.show()} key="people">
-      People
-    </a>,
-  ]
+    )
+  }
 }

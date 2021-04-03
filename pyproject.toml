@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "csrt"
+version = "1.0.0"
+description = "Climate Smart Restoration Tool"
+authors = ["Conservation Biology Institute"]
+license = "BSD-3-Clause"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+trefoil = { git = "https://github.com/consbio/trefoil.git", branch = "main" }
+rasterio = "^1.2a1"
+seedsource-core = { path = "./seedsource-core", develop = true }
+django-celery-results = "^2.0.0"
+social-auth-app-django = "^4.0.0"
+psycopg2-binary = "^2.8.6"
+django-webpack-loader = "^0.7.0"
+celery = "^4.0.0"
+pyproj = "^3.0.0"
+djangorestframework-filters = { git = "https://github.com/philipn/django-rest-framework-filters.git", branch = "master"}
+sentry-sdk = "^0.19.5"
+enmerkar = "^0.7.1"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

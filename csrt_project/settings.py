@@ -19,7 +19,7 @@ from datetime import timedelta
 from pathlib import Path
 
 import sentry_sdk
-from django.core.urlresolvers import reverse_lazy
+from django.urls import reverse_lazy
 from sentry_sdk.integrations.celery import CeleryIntegration
 from sentry_sdk.integrations.django import DjangoIntegration
 from trefoil.render.renderers.stretched import StretchedRenderer
@@ -62,6 +62,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'waffle',
     'ncdjango',
     'rest_framework',
     'tastypie',
@@ -75,16 +76,16 @@ INSTALLED_APPS = (
     'csrt'
 )
 
-MIDDLEWARE_CLASSES = (
+MIDDLEWARE = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    'seedsource_core.django.preview.middleware.PreviewAccessMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',
+    'waffle.middleware.WaffleMiddleware'
 )
 
 ROOT_URLCONF = 'csrt_project.urls'
