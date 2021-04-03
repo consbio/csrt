@@ -3,13 +3,10 @@ version: 0.2
 phases:
   install:
     commands:
-      - git clone https://github.com/consbio/csrt.git csrt-build
-      - (cd csrt-build/ && git checkout master && git submodule update --init)
-      - (cd csrt-build/javascript && yarn install)
+      - (cd javascript && yarn install)
   build:
     commands:
-      - (cd csrt-build/javascript && yarn run build)
+      - (cd javascript && yarn run build)
 
 artifacts:
   files: "**/*"
-  base-directory: "csrt-build"
