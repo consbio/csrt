@@ -41,7 +41,7 @@
     "file-loader": "^1.1.11",
     "jison": "^0.4.18",
     "mini-css-extract-plugin": "^1.4.0",
-    "node-sass": "^4.9.3",
+    "node-sass": "^7.0.0",
     "postcss-loader": "^2.1.5",
     "prettier": "^2.1.2",
     "sass-loader": "^7.0.1",
