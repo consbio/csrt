@@ -64,7 +64,7 @@
     "react-redux": "^7.2.1",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
-    "seedsource-ui": "^1.5.0",
+    "seedsource-ui": "^1.8.0",
     "shpjs": "^3.4.2"
   }
 }
