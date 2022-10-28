@@ -303,3 +303,6 @@ SENTRY_DSN = CONFIG.get("sentry-dsn")
 
 if SENTRY_DSN:
     sentry_sdk.init(dsn=SENTRY_DSN, integrations=[DjangoIntegration(), CeleryIntegration()])
+
+# Prevents warnings created by the Django upgrade 2.2 -> 3.2
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
