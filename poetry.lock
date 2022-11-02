@@ -102,7 +102,7 @@ tests_no_zope = ["coverage[toml] (>=5.0.2)", "hypothesis", "pympler", "pytest (>
 
 [[package]]
 name = "babel"
-version = "2.10.3"
+version = "2.11.0"
 description = "Internationalization utilities"
 category = "main"
 optional = false
@@ -329,7 +329,7 @@ python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*,>=2.7
 
 [[package]]
 name = "cryptography"
-version = "38.0.2"
+version = "38.0.3"
 description = "cryptography is a package which provides cryptographic recipes and primitives to Python developers."
 category = "main"
 optional = false
@@ -751,7 +751,7 @@ python-versions = "*"
 
 [[package]]
 name = "pillow"
-version = "9.2.0"
+version = "9.3.0"
 description = "Python Imaging Library (Fork)"
 category = "main"
 optional = false
@@ -873,7 +873,7 @@ python-versions = "*"
 
 [[package]]
 name = "python-pptx"
-version = "0.6.19"
+version = "0.6.21"
 description = "Generate and manipulate Open XML PowerPoint (.pptx) files"
 category = "main"
 optional = false
@@ -901,7 +901,7 @@ postgresql = ["psycopg2"]
 
 [[package]]
 name = "pytz"
-version = "2022.5"
+version = "2022.6"
 description = "World timezone definitions, modern and historical"
 category = "main"
 optional = false
@@ -987,7 +987,7 @@ ncdjango = "^1.3.6"
 netCDF4 = "^1.5.5"
 progress = "^1.5"
 pyproj = "~3.0.0"
-python-pptx = ">=0.6.18,<0.6.20"
+python-pptx = "^0.6.21"
 trefoil = "branch main"
 WeasyPrint = "^52.2"
 
@@ -1402,7 +1402,9 @@ python-mimeparse = [
     {file = "python-mimeparse-1.6.0.tar.gz", hash = "sha256:76e4b03d700a641fd7761d3cd4fdbbdcd787eade1ebfac43f877016328334f78"},
     {file = "python_mimeparse-1.6.0-py2.py3-none-any.whl", hash = "sha256:a295f03ff20341491bfe4717a39cd0a8cc9afad619ba44b77e86b0ab8a2b8282"},
 ]
-python-pptx = []
+python-pptx = [
+    {file = "python-pptx-0.6.21.tar.gz", hash = "sha256:7798a2aaf89563565b3c7120c0acfe9aff775db0db3580544e3bf4840c2e378f"},
+]
 python3-openid = [
     {file = "python3-openid-3.2.0.tar.gz", hash = "sha256:33fbf6928f401e0b790151ed2b5290b02545e8775f982485205a066f874aaeaf"},
     {file = "python3_openid-3.2.0-py3-none-any.whl", hash = "sha256:6626f771e0417486701e0b4daff762e7212e820ca5b29fcc0d05f6f8736dfa6b"},
