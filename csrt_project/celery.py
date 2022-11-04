@@ -7,8 +7,6 @@ from django.conf import settings
 # set the default Django settings module for the 'celery' program.
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'csrt_project.settings')
 
-django.setup()
-
 app = Celery('csrt_project')
 
 # Using a string here means the worker doesn't have to serialize
