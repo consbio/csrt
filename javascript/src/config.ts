@@ -364,7 +364,7 @@ export default () => {
       objects: Object.assign(baseConfig.constraints.objects, {
         ...Object.fromEntries(
           speciesConstraints.map(({ species, label, serialize }) => [
-            `${species}`,
+            species,
             {
               component: SpeciesConstraint,
               constraint: 'raster',
