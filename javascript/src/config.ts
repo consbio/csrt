@@ -3,6 +3,129 @@ import { get, urlEncode } from 'seedsource-ui/lib/io'
 import { receiveTransfer } from 'seedsource-ui/lib/actions/variables'
 import SpeciesConstraint from 'seedsource-ui/lib/containers/SpeciesConstraint'
 
+const speciesConstraints = [
+  {
+    species: 'artr',
+    label: 'Wyoming/Basin Big Sagebrush Range',
+    serialize: ({ objective, climate }: any) => {
+      const { time, model } = objective === 'seedlots' ? climate.seedlot : climate.site
+      let climateFragment
+
+      if (time === '1961_1990' || time === '1981_2010') {
+        climateFragment = time
+      } else {
+        climateFragment = `${model}_${time}`
+      }
+
+      return {
+        service: `sage_niche_${climateFragment}`,
+      }
+    },
+  },
+  {
+    species: 'atva',
+    label: 'Mountain big sagebrush Range',
+    serialize: ({ objective, climate }: any) => {
+      const { time, model } = objective === 'seedlots' ? climate.seedlot : climate.site
+      let serviceName
+
+      if (time === '1961_1990') {
+        serviceName = 'hist60'
+      } else if (time === '1981_2010') {
+        serviceName = 'cur1980_10'
+      } else {
+        const year = {
+          '2025': '20',
+          '2055': '50',
+          '2085': '80',
+        }[time as string]
+
+        serviceName = `${model}_${year}`
+      }
+
+      return {
+        service: `constraints/atva/range/${serviceName}`,
+      }
+    },
+  },
+  {
+    species: 'pssp',
+    label: 'Blubunch wheatgrass Range',
+    serialize: ({ objective, climate }: any) => {
+      const { time, model } = objective === 'seedlots' ? climate.seedlot : climate.site
+      let serviceName
+
+      if (time === '1961_1990') {
+        serviceName = 'hist60_90'
+      } else if (time === '1981_2010') {
+        serviceName = 'contemp80_10'
+      } else {
+        const year = {
+          '2025': '2020',
+          '2055': '2050',
+          '2085': '2080',
+        }[time as string]
+
+        serviceName = `d${year}_${model}`
+      }
+      return {
+        service: `constraints/pssp/range/${serviceName}`,
+      }
+    },
+  },
+]
+
+const speciesConstraintRegions = [
+  {
+    species: 'artr',
+    label: 'Colorado Plateau Range',
+    region: 'colorado-plateau',
+    serialize: () => ({ service: 'constraints/artr/region/ColoradoPlateau' }),
+  },
+  {
+    species: 'artr',
+    label: 'Columbia Basin Range',
+    region: 'columbia-basin',
+    serialize: () => ({ service: 'constraints/artr/region/ColumbiaBasin' }),
+  },
+  {
+    species: 'artr',
+    label: 'Great Basin Range',
+    region: 'great-basin',
+    serialize: () => ({ service: 'constraints/artr/region/GreatBasin' }),
+  },
+  {
+    species: 'artr',
+    label: 'Wyoming Basin Range',
+    region: 'wyoming-basin',
+    serialize: () => ({ service: 'constraints/artr/region/WyomingBasin' }),
+  },
+  {
+    species: 'atva',
+    label: 'Central Basin Range',
+    region: 'central-basin',
+    serialize: () => ({ service: 'constraints/atva/region/CentralBasin_Range' }),
+  },
+  {
+    species: 'atva',
+    label: 'Colorado Plateaus Region',
+    region: 'colorado-plateaus-region',
+    serialize: () => ({ service: 'constraints/atva/region/ColoradoPlateaus' }),
+  },
+  {
+    species: 'atva',
+    label: 'Columbia Plateau Region',
+    region: 'columbia-plateau-region',
+    serialize: () => ({ service: 'constraints/atva/region/ColumbiaPlateau' }),
+  },
+  {
+    species: 'atva',
+    label: 'Southern Rockies Region',
+    region: 'southern-rockies-region',
+    serialize: () => ({ service: 'constraints/atva/region/SouthernRockies' }),
+  },
+]
+
 export default () => {
   updateConfig({
     apiRoot: '/csrt/',
@@ -239,171 +362,36 @@ export default () => {
     ],
     constraints: {
       objects: Object.assign(baseConfig.constraints.objects, {
-        'artr': {
-          component: SpeciesConstraint,
-          constraint: 'raster',
-          values: {
-            species: 'artr',
-            label: 'Wyoming/Basin Big Sagebrush Range',
-            isRegion: false,
-          },
-          serialize: ({ objective, climate }: any) => {
-            const { time, model } = objective === 'seedlots' ? climate.seedlot : climate.site
-            let climateFragment
-
-            if (time === '1961_1990' || time === '1981_2010') {
-              climateFragment = time
-            } else {
-              climateFragment = `${model}_${time}`
-            }
-
-            return {
-              service: `sage_niche_${climateFragment}`,
-            }
-          },
-        },
-        'atva': {
-          component: SpeciesConstraint,
-          constraint: 'raster',
-          values: {
-            species: 'atva',
-            label: 'Mountain big sagebrush Range',
-            isRegion: false,
-          },
-          serialize: ({ objective, climate }: any) => {
-            const { time, model } = objective === 'seedlots' ? climate.seedlot : climate.site
-            let serviceName
-
-            if (time === '1961_1990') {
-              serviceName = 'hist60'
-            } else if (time === '1981_2010') {
-              serviceName = 'cur1980_10'
-            } else {
-              const year = {
-                '2025': '20',
-                '2055': '50',
-                '2085': '80',
-              }[time as string]
-
-              serviceName = `${model}_${year}`
-            }
-
-            return {
-              service: `constraints/atva/range/${serviceName}`,
-            }
-          },
-        },
-        'pssp': {
-          component: SpeciesConstraint,
-          constraint: 'raster',
-          values: {
-            species: 'pssp',
-            label: 'Blubunch wheatgrass Range',
-            isRegion: false,
-          },
-          serialize: ({ objective, climate }: any) => {
-            const { time, model } = objective === 'seedlots' ? climate.seedlot : climate.site
-            let serviceName
-
-            if (time === '1961_1990') {
-              serviceName = 'hist60_90'
-            } else if (time === '1981_2010') {
-              serviceName = 'contemp80_10'
-            } else {
-              const year = {
-                '2025': '2020',
-                '2055': '2050',
-                '2085': '2080',
-              }[time as string]
-
-              serviceName = `d${year}_${model}`
-            }
-
-            return {
-              service: `constraints/pssp/range/${serviceName}`,
-            }
-          },
-        },
-        'artr-colorado-plateau': {
-          component: SpeciesConstraint,
-          constraint: 'raster',
-          values: {
-            species: 'artr',
-            label: 'Colorado Plateau Range',
-            isRegion: true,
-          },
-          serialize: () => ({ service: 'constraints/artr/region/ColoradoPlateau' }),
-        },
-        'artr-columbia-basin': {
-          component: SpeciesConstraint,
-          constraint: 'raster',
-          values: {
-            species: 'artr',
-            label: 'Columbia Basin Range',
-            isRegion: true,
-          },
-          serialize: () => ({ service: 'constraints/artr/region/ColumbiaBasin' }),
-        },
-        'artr-great-basin': {
-          component: SpeciesConstraint,
-          constraint: 'raster',
-          values: {
-            species: 'artr',
-            label: 'Great Basin Range',
-            isRegion: true,
-          },
-          serialize: () => ({ service: 'constraints/artr/region/GreatBasin' }),
-        },
-        'artr-wyoming-basin': {
-          component: SpeciesConstraint,
-          constraint: 'raster',
-          values: {
-            species: 'artr',
-            label: 'Wyoming Basin Range',
-            isRegion: true,
-          },
-          serialize: () => ({ service: 'constraints/artr/region/WyomingBasin' }),
-        },
-        'atva-central-basin': {
-          component: SpeciesConstraint,
-          constraint: 'raster',
-          values: {
-            species: 'atva',
-            label: 'Central Basin Range',
-            isRegion: true,
-          },
-          serialize: () => ({ service: 'constraints/atva/region/CentralBasin_Range' }),
-        },
-        'atva-colorado-plateaus-region': {
-          component: SpeciesConstraint,
-          constraint: 'raster',
-          values: {
-            species: 'atva',
-            label: 'Colorado Plateaus Region',
-            isRegion: true,
-          },
-          serialize: () => ({ service: 'constraints/atva/region/ColoradoPlateaus' }),
-        },
-        'atva-columbia-plateau-region': {
-          component: SpeciesConstraint,
-          constraint: 'raster',
-          values: {
-            species: 'atva',
-            label: 'Columbia Plateau Region',
-            isRegion: true,
-          },
-          serialize: () => ({ service: 'constraints/atva/region/ColumbiaPlateau' }),
-        },
-        'atva-southern-rockies-region': {
-          component: SpeciesConstraint,
-          constraint: 'raster',
-          values: {
-            species: 'atva',
-            label: 'Southern Rockies Region',
-            isRegion: true,
-          },
-          serialize: () => ({ service: 'constraints/atva/region/SouthernRockies' }),
-        },
+        ...Object.fromEntries(
+          speciesConstraints.map(({ species, label, serialize }) => [
+            species,
+            {
+              component: SpeciesConstraint,
+              constraint: 'raster',
+              values: {
+                species,
+                label,
+                isRegion: false,
+              },
+              serialize: ({ objective, climate }: any) => serialize({ objective, climate }),
+            },
+          ]),
+        ),
+        ...Object.fromEntries(
+          speciesConstraintRegions.map(({ species, label, region, serialize }) => [
+            `${species}-${region}`,
+            {
+              component: SpeciesConstraint,
+              constraint: 'raster',
+              values: {
+                species,
+                label,
+                isRegion: true,
+              },
+              serialize: () => serialize(),
+            },
+          ]),
+        ),
       }),
       categories: [
         ...baseConfig.constraints.categories,
@@ -412,21 +400,9 @@ export default () => {
           label: 'Species Range',
           type: 'category',
           items: [
-            {
-              name: 'artr',
-              label: 'Wyoming/Basin Big Sagebrush',
-              type: 'constraint',
-            },
-            {
-              name: 'atva',
-              label: 'Mountain big sagebrush',
-              type: 'constraint',
-            },
-            {
-              name: 'pssp',
-              label: 'Bluebrunch wheatgrass',
-              type: 'consraint',
-            },
+            ...speciesConstraints.map(({ species, label }) => {
+              return { name: species, label, type: 'constraint' }
+            }),
           ],
         },
         {
@@ -439,26 +415,13 @@ export default () => {
               label: 'Wyoming/Basin Big Sagebrush',
               type: 'category',
               items: [
-                {
-                  name: 'artr-colorado-plateau',
-                  label: 'Colorado Plateau Range',
-                  type: 'constraint',
-                },
-                {
-                  name: 'artr-columbia-basin',
-                  label: 'Columbia Basin Range',
-                  type: 'constraint',
-                },
-                {
-                  name: 'artr-great-basin',
-                  label: 'Great Basin Range',
-                  type: 'constraint',
-                },
-                {
-                  name: 'artr-wyoming-basin',
-                  label: 'Wyoming Basin Range',
-                  type: 'constraint',
-                },
+                ...speciesConstraintRegions
+                  .filter(({ species }) => species === 'artr')
+                  .map(({ species, region, label }) => ({
+                    name: `${species}-${region}`,
+                    label,
+                    type: 'constraint',
+                  })),
               ],
             },
             {
@@ -466,31 +429,72 @@ export default () => {
               label: 'Mountain big sagebrush',
               type: 'category',
               items: [
-                {
-                  name: 'atva-central-basin',
-                  label: 'Central Basin Range',
-                  type: 'constraint',
-                },
-                {
-                  name: 'atva-colorado-plateaus-region',
-                  label: 'Colorado Plateaus Region',
-                  type: 'constraint',
-                },
-                {
-                  name: 'atva-columbia-plateau-region',
-                  label: 'Columbia Plateau Region',
-                  type: 'constraint',
-                },
-                {
-                  name: 'atva-southern-rockies-region',
-                  label: 'Southern Rockies Region',
-                  type: 'constraint',
-                },
+                ...speciesConstraintRegions
+                  .filter(({ species }) => species === 'atva')
+                  .map(({ species, region, label }) => ({
+                    name: `${species}-${region}`,
+                    label,
+                    type: 'constraint',
+                  })),
               ],
             },
           ],
         },
       ],
     },
+    layers: {
+      ...baseConfig.layers,
+      ...Object.fromEntries(
+        speciesConstraints.map(({ species, label, serialize }) => [
+          `constraint-${species}`,
+          {
+            type: 'raster',
+            label,
+            show: () => true,
+            url: ({ runConfiguration: { climate, objective } }: any) =>
+              `/tiles/${serialize({ objective, climate }).service}/{z}/{x}/{y}.png`,
+            zIndex: 2,
+          },
+        ]),
+      ),
+      ...Object.fromEntries(
+        speciesConstraintRegions.map(({ species, label, region, serialize }) => [
+          `constraint-${species}-${region}`,
+          {
+            type: 'raster',
+            label,
+            show: () => true,
+            url: () => `/tiles/${serialize().service}/{z}/{x}/{y}.png`,
+            zIndex: 2,
+          },
+        ]),
+      ),
+    },
+    layerCategories: [
+      ...baseConfig.layerCategories,
+      {
+        label: `Constraints`,
+        show: () => true,
+        layers: [...speciesConstraints.map(({ species }) => `constraint-${species}`)],
+      },
+      {
+        label: 'Wyoming/Basin Big Sagebrush Regions',
+        show: () => true,
+        layers: [
+          ...speciesConstraintRegions
+            .filter(({ species }) => species === 'artr')
+            .map(({ species, region }) => `constraint-${species}-${region}`),
+        ],
+      },
+      {
+        label: 'Mountain big sagebrush Regions',
+        show: () => true,
+        layers: [
+          ...speciesConstraintRegions
+            .filter(({ species }) => species === 'atva')
+            .map(({ species, region }) => `constraint-${species}-${region}`),
+        ],
+      },
+    ],
   })
 }
